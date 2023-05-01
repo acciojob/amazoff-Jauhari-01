@@ -132,7 +132,7 @@ public class OrderRepository {
     }
 
     public String getLastDeliveryTimeByPartnerId(String partnerId) {                                    // 11th API
-        String time = null;
+        // String time = null;
         int delivery_time = 0;
 
         if(partnerMap.containsKey(partnerId))
