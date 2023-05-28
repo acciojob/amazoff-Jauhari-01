@@ -1,5 +1,7 @@
 package com.driver;
 
+import io.swagger.models.auth.In;
+
 public class Order {
 
     private String id;
@@ -7,15 +9,16 @@ public class Order {
 
     public Order(String id, String deliveryTime) {
 
-        // The deliveryTime has to converted from string to int and then stored in 
-        //the attribute
+        // The deliveryTime has to converted from string to int and then stored in the attribute
         //deliveryTime  = HH*60 + MM
-        this.id = id;
 
-        int hours = Integer.valueOf(deliveryTime.substring(0, 2));
-        int min = Integer.valueOf(deliveryTime.substring(3));
-        int total = hours*60+min;
-        this.deliveryTime = total;
+        this.id=id;
+
+        String arr[]=deliveryTime.split(":");//12:45
+        int hr=Integer.parseInt(arr[0]);
+        int min=Integer.parseInt(arr[1]);
+
+        this.deliveryTime=(hr*60+min);
 
     }
 
